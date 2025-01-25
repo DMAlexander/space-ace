@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://du62xw1gwmgv3"]
+
+[ext_resource type="Script" path="res://scenes/bullets/base_bullet.gd" id="1_xppqs"]
+[ext_resource type="PackedScene" uid="uid://bxvhinyrc2kqk" path="res://scenes/out_of_time/out_of_time.tscn" id="2_baaxs"]
+
+[node name="BaseBullet" type="Node2D"]
+script = ExtResource("1_xppqs")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="OutOfTime" parent="." instance=ExtResource("2_baaxs")]
+life_s = 20.0
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,0 +1,14 @@
+extends TextureButton
+
+
+class_name UiButton
+
+
+@export var text: String
+
+
+@onready var label: Label = $Label
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	label.text = text

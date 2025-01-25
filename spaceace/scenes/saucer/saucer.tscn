@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://p7eevhfwx2xc"]
+
+[ext_resource type="Script" path="res://scenes/saucer/saucer.gd" id="1_sqt8a"]
+
+[node name="Saucer" type="Node2D"]
+script = ExtResource("1_sqt8a")
