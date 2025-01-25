@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://gpdrkhi6welc"]
+[gd_scene load_steps=3 format=3 uid="uid://gpdrkhi6welc"]
+
+[ext_resource type="Texture2D" uid="uid://cw78cw3opyi65" path="res://assets/lasers/laserRed03.png" id="1_kjfkd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hp2qe"]
 
@@ -8,6 +10,7 @@
 shape = SubResource("CircleShape2D_hp2qe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_kjfkd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

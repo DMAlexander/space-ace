@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cktqvja82cr55"]
+[gd_scene load_steps=7 format=3 uid="uid://cktqvja82cr55"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_pqhhm"]
+[ext_resource type="Texture2D" uid="uid://dbjjyf46yn6l1" path="res://assets/backgrounds/GalaxyUno.png" id="2_508j7"]
+[ext_resource type="PackedScene" uid="uid://dxfhyiupcsh2i" path="res://scenes/sun/sun.tscn" id="2_hr3e3"]
+[ext_resource type="Texture2D" uid="uid://c76i8waewf17e" path="res://assets/backgrounds/spr_stars01.png" id="3_04hd5"]
+[ext_resource type="Texture2D" uid="uid://br3kg6o247jbd" path="res://assets/backgrounds/spr_stars02.png" id="4_w7yhj"]
+[ext_resource type="LabelSettings" uid="uid://cb2u5o7m8jgyn" path="res://assets/LG_Title.tres" id="5_3nh4b"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -10,3 +15,47 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pqhhm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_508j7")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_04hd5")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_w7yhj")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "SPACE ACE
+(ish)"
+label_settings = ExtResource("5_3nh4b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Sun" parent="." instance=ExtResource("2_hr3e3")]
+position = Vector2(60, 60)

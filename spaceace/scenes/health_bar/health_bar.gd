@@ -4,7 +4,7 @@ extends TextureProgressBar
 class_name HealthBar
 
 
-_signal died
+signal died
 
 const COLOR_DANGER: Color = Color("#cc0000")
 const COLOR_MIDDLE: Color = Color("#ff9900")
