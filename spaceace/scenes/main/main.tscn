@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cktqvja82cr55"]
+[gd_scene load_steps=8 format=3 uid="uid://cktqvja82cr55"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_pqhhm"]
 [ext_resource type="Texture2D" uid="uid://dbjjyf46yn6l1" path="res://assets/backgrounds/GalaxyUno.png" id="2_508j7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c76i8waewf17e" path="res://assets/backgrounds/spr_stars01.png" id="3_04hd5"]
 [ext_resource type="Texture2D" uid="uid://br3kg6o247jbd" path="res://assets/backgrounds/spr_stars02.png" id="4_w7yhj"]
 [ext_resource type="LabelSettings" uid="uid://cb2u5o7m8jgyn" path="res://assets/LG_Title.tres" id="5_3nh4b"]
+[ext_resource type="PackedScene" uid="uid://oxv843wa4d7e" path="res://scenes/ui_button/ui_button.tscn" id="6_enu14"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -26,11 +27,13 @@ grow_vertical = 2
 texture = ExtResource("2_508j7")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("3_04hd5")
 
 [node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("4_w7yhj")
@@ -56,6 +59,20 @@ vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+
+[node name="PlayButton" parent="MarginContainer/VBoxContainer" instance=ExtResource("6_enu14")]
+layout_mode = 2
+text = "Play"
+
+[node name="ExitButton" parent="MarginContainer/VBoxContainer" instance=ExtResource("6_enu14")]
+layout_mode = 2
+text = "Exit"
 
 [node name="Sun" parent="." instance=ExtResource("2_hr3e3")]
 position = Vector2(60, 60)
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
