@@ -9,7 +9,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalManager.on_player_hit.connect(on_player_hit)
-	SignalManager.on_player_health_bonus.conenct(on_player_health_bonus)
+	SignalManager.on_player_health_bonus.connect(on_player_health_bonus)
 	SignalManager.on_score_updated.connect(on_score_updated)
 
 

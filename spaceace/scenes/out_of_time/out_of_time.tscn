@@ -2,5 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/out_of_time/out_of_time.gd" id="1_gmafs"]
 
-[node name="OutOfTime" type="Node2D"]
+[node name="OutOfTime" type="Node"]
 script = ExtResource("1_gmafs")
+
+[node name="Timer" type="Timer" parent="."]

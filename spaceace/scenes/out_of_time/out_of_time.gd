@@ -10,6 +10,7 @@ func _ready() -> void:
 	timer.start()
 
 
+
 func _on_timer_timeout() -> void:
 	var p: Node = get_parent()
 	p.queue_free()

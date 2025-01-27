@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dk8omhxwio0on"]
+[gd_scene load_steps=3 format=3 uid="uid://dk8omhxwio0on"]
 
 [ext_resource type="Script" path="res://scenes/power_up/power_up.gd" id="1_xykdi"]
 
-[node name="PowerUp" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvhxj"]
+
+[node name="PowerUp" type="Area2D"]
 script = ExtResource("1_xykdi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uvhxj")

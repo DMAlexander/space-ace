@@ -9,7 +9,7 @@ class_name Player
 @export var health_boost: int = 20
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var animation_player: AnimationPlayer = $AnimatedPlayer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var shield: Shield = $Shield
 
 
