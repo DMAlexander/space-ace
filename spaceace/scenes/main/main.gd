@@ -12,10 +12,8 @@ func _process(delta: float) -> void:
 
 
 func _on_play_button_pressed() -> void:
-#	GameManager.load_level_scene()
-	print("play pressed")
+	GameManager.load_level_scene()
 	
 	
 func _on_exit_button_pressed() -> void:
-#	get_tree().quit()
-	print("exit pressed")
+	get_tree().quit()
