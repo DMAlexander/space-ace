@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://35hd7vh0nheh"]
+[gd_scene load_steps=3 format=3 uid="uid://35hd7vh0nheh"]
 
-[node name="EnemyBio" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://bxvhinyrc2kqk" path="res://scenes/out_of_time/out_of_time.tscn" id="1_l1iki"]
+
+[sub_resource type="Curve2D" id="Curve2D_wrt1a"]
+
+[node name="EnemyBio" type="Path2D"]
+curve = SubResource("Curve2D_wrt1a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="OutOfTime" parent="." instance=ExtResource("1_l1iki")]

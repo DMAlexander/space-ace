@@ -1,7 +1,13 @@
-[gd_scene format=3 uid="uid://xpx0v2slu3ya"]
+[gd_scene load_steps=2 format=3 uid="uid://xpx0v2slu3ya"]
+
+[ext_resource type="PackedScene" uid="uid://bxvhinyrc2kqk" path="res://scenes/out_of_time/out_of_time.tscn" id="1_y7y4q"]
 
 [node name="PlayerBullet" type="Node2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="OutOfTime" parent="." instance=ExtResource("1_y7y4q")]
