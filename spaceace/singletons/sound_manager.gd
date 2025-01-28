@@ -5,10 +5,10 @@ const DOOR_OPEN_SOUND = preload("res://assets/sounds/misc/sci-fi-door.wav")
 const POWER_UP_DEPLOY = preload("res://assets/sounds/powerup/power_up_deploy.wav")
 
 
-#const POWER_UP_SOUNDS: Dictionary = {
-	#PowerUp.PowerUpType.HEALTH: preload("res://assets/sounds/powerup/health_16.wav")
-	#PowerUp.PowerUpType.SHIELD: preload("res://assets/sounds/powerup/shield_18.wav")
-#}
+const POWER_UP_SOUNDS: Dictionary = {
+	PowerUp.PowerUpType.HEALTH: preload("res://assets/sounds/powerup/health_16.wav"),
+	PowerUp.PowerUpType.SHIELD: preload("res://assets/sounds/powerup/shield_18.wav")
+}
 
 
 var EXPLOSION_SOUNDS: Array = []
