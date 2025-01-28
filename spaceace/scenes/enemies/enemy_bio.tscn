@@ -1,11 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://35hd7vh0nheh"]
+[gd_scene load_steps=24 format=3 uid="uid://35hd7vh0nheh"]
 
 [ext_resource type="PackedScene" uid="uid://d4aa5oqh4s51u" path="res://scenes/enemies/enemy_base.tscn" id="1_f6iq5"]
 [ext_resource type="Texture2D" uid="uid://crt5wwsulev02" path="res://assets/ships/biomech_1.png" id="2_nhi0j"]
 [ext_resource type="Texture2D" uid="uid://bag1np6iwbubt" path="res://assets/ships/biomech_2.png" id="3_vb3a1"]
 [ext_resource type="Texture2D" uid="uid://cnb6cfm3qqb00" path="res://assets/ships/biomech_3.png" id="4_doorv"]
 [ext_resource type="Texture2D" uid="uid://d3aw02dhlq8wr" path="res://assets/ships/biomech_4.png" id="5_d1g22"]
-[ext_resource type="PackedScene" uid="uid://di2dosybxngl0" path="res://scenes/health_bar/health_bar.tscn" id="6_1bosr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_trpca"]
 atlas = ExtResource("2_nhi0j")
@@ -156,12 +155,5 @@ animation = &"new_animation_2"
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CapsuleShape2D_4qc7o")
-
-[node name="HealthBar" parent="." index="5" instance=ExtResource("6_1bosr")]
-offset_left = -17.0
-offset_top = -30.0
-offset_right = 17.0
-offset_bottom = -28.0
-start_health = 40
 
 [editable path="HitBox"]

@@ -1,10 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://b2owp5xtee7qf"]
+[gd_scene load_steps=19 format=3 uid="uid://b2owp5xtee7qf"]
 
 [ext_resource type="PackedScene" uid="uid://d4aa5oqh4s51u" path="res://scenes/enemies/enemy_base.tscn" id="1_t73yt"]
 [ext_resource type="Texture2D" uid="uid://dtfbnbq08gvk1" path="res://assets/ships/zipper_1.png" id="2_vb4yq"]
 [ext_resource type="Texture2D" uid="uid://d11x1vbs3ntry" path="res://assets/ships/zipper_2.png" id="3_mchk3"]
 [ext_resource type="Texture2D" uid="uid://uoij8ibmd7xn" path="res://assets/ships/zipper_3.png" id="4_r6mx0"]
-[ext_resource type="PackedScene" uid="uid://di2dosybxngl0" path="res://scenes/health_bar/health_bar.tscn" id="5_n27et"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_670d2"]
 atlas = ExtResource("2_vb4yq")
@@ -122,12 +121,5 @@ animation = &"new_animation_1"
 position = Vector2(0, -1.5)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_7ifp4")
-
-[node name="HealthBar" parent="." index="5" instance=ExtResource("5_n27et")]
-offset_left = -17.0
-offset_top = -21.0
-offset_right = 17.0
-offset_bottom = -19.0
-start_health = 70
 
 [editable path="HitBox"]

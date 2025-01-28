@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 
 func blow_up() -> void:
 	SignalManager.on_create_explosion.emit(global_position, Explosion.ExplosionType.BOOM)
-	ScoreManager.increment_score(SCORE)
+#	ScoreManager.increment_score(SCORE)
 	set_process(false)
 	queue_free()
 	

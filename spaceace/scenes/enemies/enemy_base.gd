@@ -19,7 +19,7 @@ class_name EnemyBase
 @onready var sound: AudioStreamPlayer2D = $Sound
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health_bar: HealthBar = $HealthBar
-#@onready var booms: Node2D = $Booms
+@onready var booms: Node2D = $Booms
 
 
 var _speed: float = 50
@@ -80,12 +80,12 @@ func shoot() -> void:
 	start_shoot_timer()
 	
 	
-#func make_booms() -> void:
-	#for b in booms.get_children():
-		#SignalManager.on_create_explosion.emit(
-			#b.global_position,
-			#Explosion.ExplosionType.BOOM
-		#)
+func make_booms() -> void:
+	for b in booms.get_children():
+		SignalManager.on_create_explosion.emit(
+			b.global_position,
+			Explosion.ExplosionType.BOOM
+		)
 		
 func create_power_up() -> void:
 	if randf() < power_up_chance:
@@ -97,8 +97,8 @@ func die() -> void:
 		return
 	_dead = true
 	create_power_up()
-#	make_booms()
-	ScoreManager.increment_score(kill_me_score)
+	make_booms()
+#	ScoreManager.increment_score(kill_me_score)
 	queue_free()
 		
 		

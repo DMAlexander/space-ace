@@ -75,7 +75,7 @@ func _on_health_bar_died() -> void:
 	shoot_timer.stop()
 	hit_box.deactivate()
 	s_mach.travel("die")
-	ScoreManager.increment_score(SCORE)
+#	ScoreManager.increment_score(SCORE)
 	
 	
 func _on_hit_box_area_entered(area: Area2D) -> void:

@@ -1,10 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://deufmy0xq5xbf"]
+[gd_scene load_steps=19 format=3 uid="uid://deufmy0xq5xbf"]
 
 [ext_resource type="PackedScene" uid="uid://d4aa5oqh4s51u" path="res://scenes/enemies/enemy_base.tscn" id="1_ddjvv"]
 [ext_resource type="Texture2D" uid="uid://7t83nchu8rcy" path="res://assets/ships/bomber_1.png" id="2_pl7rn"]
 [ext_resource type="Texture2D" uid="uid://etytt0w0xgal" path="res://assets/ships/bomber_2.png" id="3_76gdg"]
 [ext_resource type="Texture2D" uid="uid://dio64a7n5kgay" path="res://assets/ships/bomber_3.png" id="4_r0wj8"]
-[ext_resource type="PackedScene" uid="uid://di2dosybxngl0" path="res://scenes/health_bar/health_bar.tscn" id="5_rtipg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uyvae"]
 atlas = ExtResource("2_pl7rn")
@@ -120,11 +119,10 @@ sprite_frames = SubResource("SpriteFrames_nmplm")
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CapsuleShape2D_0uyk0")
 
-[node name="HealthBar" parent="." index="5" instance=ExtResource("5_rtipg")]
+[node name="HealthBar" parent="." index="5"]
 offset_left = -17.0
-offset_top = -36.0
+offset_top = -35.0
 offset_right = 17.0
-offset_bottom = -34.0
-start_health = 80
+offset_bottom = -33.0
 
 [editable path="HitBox"]
