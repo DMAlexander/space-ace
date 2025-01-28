@@ -65,7 +65,7 @@ _data = {
 "turn": SubResource("Animation_5cem5")
 }
 
-[node name="Player" type="Area2D" groups=["Player"]]
+[node name="Player" type="Area2D" groups=["Moveables", "Player"]]
 collision_mask = 90
 script = ExtResource("1_ckg8v")
 speed = 200.0

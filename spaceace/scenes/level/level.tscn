@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhusjd5bm6soi"]
+[gd_scene load_steps=15 format=3 uid="uid://dhusjd5bm6soi"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_og60i"]
 [ext_resource type="PackedScene" uid="uid://cpmsjy244fy1w" path="res://scenes/shake_cam/shake_cam.tscn" id="2_ii74r"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://35hd7vh0nheh" path="res://scenes/enemies/enemy_bio.tscn" id="6_mk84d"]
 [ext_resource type="PackedScene" uid="uid://deufmy0xq5xbf" path="res://scenes/enemies/enemy_bomber.tscn" id="7_0a8gi"]
 [ext_resource type="PackedScene" uid="uid://ca4yjjdoax4w0" path="res://scenes/game_ui/game_ui.tscn" id="8_wxfrt"]
+[ext_resource type="PackedScene" uid="uid://cll7tl56r3nuw" path="res://scenes/game_over/game_over.tscn" id="10_kabkg"]
+[ext_resource type="AudioStream" uid="uid://bi7mxs2f6yv6p" path="res://assets/sounds/loops/Mercury.wav" id="11_xdmfd"]
 
 [sub_resource type="Curve2D" id="Curve2D_jwvpp"]
 _data = {
@@ -71,3 +73,10 @@ position = Vector2(291, 101)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameUi" parent="CanvasLayer" instance=ExtResource("8_wxfrt")]
+
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource("10_kabkg")]
+visible = false
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_xdmfd")
+volume_db = -10.0
