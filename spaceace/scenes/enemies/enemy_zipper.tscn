@@ -128,5 +128,6 @@ offset_left = -17.0
 offset_top = -21.0
 offset_right = 17.0
 offset_bottom = -19.0
+start_health = 70
 
 [editable path="HitBox"]
