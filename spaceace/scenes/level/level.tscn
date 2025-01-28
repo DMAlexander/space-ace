@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhusjd5bm6soi"]
+[gd_scene load_steps=13 format=3 uid="uid://dhusjd5bm6soi"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_og60i"]
+[ext_resource type="PackedScene" uid="uid://cpmsjy244fy1w" path="res://scenes/shake_cam/shake_cam.tscn" id="2_ii74r"]
 [ext_resource type="PackedScene" uid="uid://cn1vt41iffic5" path="res://scenes/level_bg/level_bg.tscn" id="2_o5ae7"]
 [ext_resource type="PackedScene" uid="uid://bkam8pio4ig2i" path="res://scenes/player/player.tscn" id="3_nektg"]
 [ext_resource type="PackedScene" uid="uid://bxypl4qxxabij" path="res://scenes/object_maker/object_maker.tscn" id="4_vam57"]
@@ -30,6 +31,9 @@ point_count = 2
 [node name="Level" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_og60i")
+
+[node name="ShakeCam" parent="." instance=ExtResource("2_ii74r")]
+position = Vector2(320, 240)
 
 [node name="LevelBg" parent="." instance=ExtResource("2_o5ae7")]
 
