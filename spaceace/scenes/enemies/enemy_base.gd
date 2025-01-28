@@ -29,9 +29,9 @@ var _dead: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
-#	_player_ref = get_tree().get_first_node_in_group(GameManager.GROUP_PLAYER)
-#	if !_player_ref:
-#		queue_free()
+	_player_ref = get_tree().get_first_node_in_group(GameManager.GROUP_PLAYER)
+	if !_player_ref:
+		queue_free()
 	SpaceUtils.play_random_animation(animated_sprite_2d)
 #	start_shoot_timer()
 
@@ -77,7 +77,7 @@ func shoot() -> void:
 		bullet_speed,
 		bullet_type
 	)	
-#	SoundManager.play_laser_random(sound)
+	SoundManager.play_laser_random(sound)
 	start_shoot_timer()
 	
 	
@@ -104,3 +104,7 @@ func die() -> void:
 		
 		
 		
+
+
+func _on_laser_timer_timeout() -> void:
+	shoot()

@@ -146,6 +146,8 @@ radius = 14.0
 height = 52.0
 
 [node name="EnemyBio" instance=ExtResource("1_f6iq5")]
+aims_at_player = true
+bullet_type = 2
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_kjrih")

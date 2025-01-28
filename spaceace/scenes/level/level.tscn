@@ -58,3 +58,6 @@ curve = SubResource("Curve2D_80ms5")
 [node name="EnemyBomber" parent="Path2D3" instance=ExtResource("7_0a8gi")]
 position = Vector2(-40, 184)
 rotation = 0.0210053
+
+[node name="EnemyBomber" parent="." instance=ExtResource("7_0a8gi")]
+position = Vector2(291, 101)
