@@ -1,11 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhusjd5bm6soi"]
+[gd_scene load_steps=11 format=3 uid="uid://dhusjd5bm6soi"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_og60i"]
 [ext_resource type="PackedScene" uid="uid://cn1vt41iffic5" path="res://scenes/level_bg/level_bg.tscn" id="2_o5ae7"]
 [ext_resource type="PackedScene" uid="uid://bkam8pio4ig2i" path="res://scenes/player/player.tscn" id="3_nektg"]
 [ext_resource type="PackedScene" uid="uid://bxypl4qxxabij" path="res://scenes/object_maker/object_maker.tscn" id="4_vam57"]
+[ext_resource type="PackedScene" uid="uid://b2owp5xtee7qf" path="res://scenes/enemies/enemy_zipper.tscn" id="5_6hpju"]
+[ext_resource type="PackedScene" uid="uid://35hd7vh0nheh" path="res://scenes/enemies/enemy_bio.tscn" id="6_mk84d"]
+[ext_resource type="PackedScene" uid="uid://deufmy0xq5xbf" path="res://scenes/enemies/enemy_bomber.tscn" id="7_0a8gi"]
+
+[sub_resource type="Curve2D" id="Curve2D_jwvpp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 19, 76, 0, 0, 0, 0, 710, 94)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_vnu3d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -44, 134, 0, 0, 0, 0, 699, 154)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_80ms5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -40, 184, 0, 0, 0, 0, 674, 199)
+}
+point_count = 2
 
 [node name="Level" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_og60i")
 
 [node name="LevelBg" parent="." instance=ExtResource("2_o5ae7")]
@@ -14,3 +36,25 @@ script = ExtResource("1_og60i")
 position = Vector2(303, 393)
 
 [node name="ObjectMaker" parent="." instance=ExtResource("4_vam57")]
+
+[node name="Path2D" type="Path2D" parent="."]
+y_sort_enabled = true
+curve = SubResource("Curve2D_jwvpp")
+
+[node name="EnemyZipper" parent="Path2D" instance=ExtResource("5_6hpju")]
+position = Vector2(19, 76)
+rotation = 0.0260433
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_vnu3d")
+
+[node name="EnemyBio" parent="Path2D2" instance=ExtResource("6_mk84d")]
+position = Vector2(-44, 134)
+rotation = 0.0269114
+
+[node name="Path2D3" type="Path2D" parent="."]
+curve = SubResource("Curve2D_80ms5")
+
+[node name="EnemyBomber" parent="Path2D3" instance=ExtResource("7_0a8gi")]
+position = Vector2(-40, 184)
+rotation = 0.0210053

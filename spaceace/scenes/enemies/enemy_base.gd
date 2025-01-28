@@ -28,11 +28,12 @@ var _dead: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_player_ref = get_tree().get_first_node_in_group(GameManager.GROUP_PLAYER)
-	if !_player_ref:
-		queue_free()
-	SpaceUtils.play_random_animation(animated_sprite_2d)
-	start_shoot_timer()
+	pass
+#	_player_ref = get_tree().get_first_node_in_group(GameManager.GROUP_PLAYER)
+#	if !_player_ref:
+#		queue_free()
+#	SpaceUtils.play_random_animation(animated_sprite_2d)
+#	start_shoot_timer()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

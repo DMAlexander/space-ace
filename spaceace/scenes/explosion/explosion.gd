@@ -16,7 +16,7 @@ const EXPLOSION: String = "explosion"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SoundManager.play_explosion_random(sound)
+#	SoundManager.play_explosion_random(sound)
 	play()
 
 
