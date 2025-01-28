@@ -32,7 +32,7 @@ func _ready() -> void:
 #	_player_ref = get_tree().get_first_node_in_group(GameManager.GROUP_PLAYER)
 #	if !_player_ref:
 #		queue_free()
-#	SpaceUtils.play_random_animation(animated_sprite_2d)
+	SpaceUtils.play_random_animation(animated_sprite_2d)
 #	start_shoot_timer()
 
 
