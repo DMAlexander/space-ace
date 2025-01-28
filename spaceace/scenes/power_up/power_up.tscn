@@ -1,18 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://dk8omhxwio0on"]
+[gd_scene load_steps=5 format=3 uid="uid://dk8omhxwio0on"]
 
 [ext_resource type="Script" path="res://scenes/power_up/power_up.gd" id="1_xykdi"]
+[ext_resource type="Texture2D" uid="uid://scod8if5u52i" path="res://assets/misc/shield_gold.png" id="2_42eq6"]
 [ext_resource type="PackedScene" uid="uid://bxvhinyrc2kqk" path="res://scenes/out_of_time/out_of_time.tscn" id="2_qtwkp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvhxj"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_xv3p5"]
+radius = 9.0
 
 [node name="PowerUp" type="Area2D"]
+collision_layer = 64
 script = ExtResource("1_xykdi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_42eq6")
 
 [node name="OutOfTime" parent="." instance=ExtResource("2_qtwkp")]
+life_s = 8.0
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_uvhxj")
+shape = SubResource("CircleShape2D_xv3p5")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

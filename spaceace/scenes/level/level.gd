@@ -21,10 +21,10 @@ func _process(delta: float) -> void:
 			50,
 			BaseBullet.BulletType.ENEMY)
 			
-		#SignalManager.on_create_powerup.emit(
-			#Vector2(315, 100),
-			#PowerUp.PowerUpType.HEALTH
-		#)
+		SignalManager.on_create_powerup.emit(
+			Vector2(200, 100),
+			PowerUp.PowerUpType.SHIELD
+		)
 		
 	if Input.is_action_just_pressed("explode"):
 		SignalManager.on_create_explosion.emit(Vector2(
