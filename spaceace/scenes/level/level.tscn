@@ -36,6 +36,7 @@ script = ExtResource("1_og60i")
 position = Vector2(303, 393)
 
 [node name="ObjectMaker" parent="." instance=ExtResource("4_vam57")]
+z_index = 1
 
 [node name="Path2D" type="Path2D" parent="."]
 y_sort_enabled = true
