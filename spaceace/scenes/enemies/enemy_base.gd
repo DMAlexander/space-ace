@@ -76,7 +76,7 @@ func shoot() -> void:
 		bullet_speed,
 		bullet_type
 	)	
-	SoundManager.play_laser_random(sound)
+#	SoundManager.play_laser_random(sound)
 	start_shoot_timer()
 	
 	
