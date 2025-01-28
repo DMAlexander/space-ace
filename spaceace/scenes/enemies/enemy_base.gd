@@ -33,7 +33,7 @@ func _ready() -> void:
 	if !_player_ref:
 		queue_free()
 	SpaceUtils.play_random_animation(animated_sprite_2d)
-#	start_shoot_timer()
+	start_shoot_timer()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
