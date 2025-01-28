@@ -19,7 +19,7 @@ class_name EnemyBase
 @onready var sound: AudioStreamPlayer2D = $Sound
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health_bar: HealthBar = $HealthBar
-@onready var booms: Node2D = $Booms
+#@onready var booms: Node2D = $Booms
 
 
 var _speed: float = 50
@@ -28,7 +28,6 @@ var _dead: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
 	_player_ref = get_tree().get_first_node_in_group(GameManager.GROUP_PLAYER)
 	if !_player_ref:
 		queue_free()
@@ -81,12 +80,12 @@ func shoot() -> void:
 	start_shoot_timer()
 	
 	
-func make_booms() -> void:
-	for b in booms.get_children():
-		SignalManager.on_create_explosion.emit(
-			b.global_position,
-			Explosion.ExplosionType.BOOM
-		)
+#func make_booms() -> void:
+	#for b in booms.get_children():
+		#SignalManager.on_create_explosion.emit(
+			#b.global_position,
+			#Explosion.ExplosionType.BOOM
+		#)
 		
 func create_power_up() -> void:
 	if randf() < power_up_chance:
@@ -98,7 +97,7 @@ func die() -> void:
 		return
 	_dead = true
 	create_power_up()
-	make_booms()
+#	make_booms()
 	ScoreManager.increment_score(kill_me_score)
 	queue_free()
 		
@@ -108,3 +107,12 @@ func die() -> void:
 
 func _on_laser_timer_timeout() -> void:
 	shoot()
+
+
+func _on_health_bar_died() -> void:
+	die()
+
+
+func _on_hit_box_area_entered(area: Area2D) -> void:
+	if area is BaseBullet:
+		health_bar.take_damage(area.get_damage())
