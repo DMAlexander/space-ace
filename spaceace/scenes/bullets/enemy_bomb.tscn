@@ -1,16 +1,58 @@
-[gd_scene load_steps=3 format=3 uid="uid://gpdrkhi6welc"]
+[gd_scene load_steps=6 format=3 uid="uid://gpdrkhi6welc"]
 
-[ext_resource type="Texture2D" uid="uid://cw78cw3opyi65" path="res://assets/lasers/laserRed03.png" id="1_kjfkd"]
+[ext_resource type="PackedScene" uid="uid://ce2wxnf7bupxr" path="res://scenes/bullets/base_bullet.tscn" id="1_r51ud"]
+[ext_resource type="Texture2D" uid="uid://bvtu7s0d1pdjx" path="res://assets/lasers/circle_bomb_red-Sheet.png" id="2_4k7r0"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hp2qe"]
+[sub_resource type="Animation" id="Animation_anwd5"]
+resource_name = "flash"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
 
-[node name="EnemyBomb" type="Node2D"]
+[sub_resource type="Animation" id="Animation_uve74"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_hp2qe")
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j8xur"]
+_data = {
+"RESET": SubResource("Animation_uve74"),
+"flash": SubResource("Animation_anwd5")
+}
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_kjfkd")
+[node name="EnemyBomb" instance=ExtResource("1_r51ud")]
+collision_layer = 8
+collision_mask = 33
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Sprite2D" parent="." index="2"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_4k7r0")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_j8xur")
+}
+autoplay = "flash"
