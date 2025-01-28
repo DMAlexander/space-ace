@@ -112,6 +112,7 @@ radius = 18.0
 height = 56.0
 
 [node name="EnemyBomber" instance=ExtResource("1_ddjvv")]
+aims_at_player = true
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_nmplm")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dhusjd5bm6soi"]
+[gd_scene load_steps=16 format=3 uid="uid://dhusjd5bm6soi"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_og60i"]
 [ext_resource type="PackedScene" uid="uid://cpmsjy244fy1w" path="res://scenes/shake_cam/shake_cam.tscn" id="2_ii74r"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ca4yjjdoax4w0" path="res://scenes/game_ui/game_ui.tscn" id="8_wxfrt"]
 [ext_resource type="PackedScene" uid="uid://cll7tl56r3nuw" path="res://scenes/game_over/game_over.tscn" id="10_kabkg"]
 [ext_resource type="AudioStream" uid="uid://bi7mxs2f6yv6p" path="res://assets/sounds/loops/Mercury.wav" id="11_xdmfd"]
+[ext_resource type="PackedScene" uid="uid://dm2xsxv5u253g" path="res://scenes/wave_manager/wave_manager.tscn" id="12_agptr"]
 
 [sub_resource type="Curve2D" id="Curve2D_jwvpp"]
 _data = {
@@ -46,6 +47,7 @@ position = Vector2(303, 393)
 z_index = 1
 
 [node name="Path2D" type="Path2D" parent="."]
+visible = false
 y_sort_enabled = true
 curve = SubResource("Curve2D_jwvpp")
 
@@ -54,6 +56,7 @@ position = Vector2(19, 76)
 rotation = 0.0260433
 
 [node name="Path2D2" type="Path2D" parent="."]
+visible = false
 curve = SubResource("Curve2D_vnu3d")
 
 [node name="EnemyBio" parent="Path2D2" instance=ExtResource("6_mk84d")]
@@ -61,6 +64,7 @@ position = Vector2(-44, 134)
 rotation = 0.0269114
 
 [node name="Path2D3" type="Path2D" parent="."]
+visible = false
 curve = SubResource("Curve2D_80ms5")
 
 [node name="EnemyBomber" parent="Path2D3" instance=ExtResource("7_0a8gi")]
@@ -80,3 +84,5 @@ visible = false
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_xdmfd")
 volume_db = -10.0
+
+[node name="WaveManager" parent="." instance=ExtResource("12_agptr")]
