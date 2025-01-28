@@ -1,11 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cn1vt41iffic5"]
+[gd_scene load_steps=4 format=3 uid="uid://d01hs82fxifl6"]
 
-[ext_resource type="Script" path="res://scenes/level_bg/level_bg.gd" id="1_wossw"]
-[ext_resource type="Texture2D" uid="uid://c76i8waewf17e" path="res://assets/backgrounds/spr_stars01.png" id="2_rrfus"]
-[ext_resource type="Texture2D" uid="uid://br3kg6o247jbd" path="res://assets/backgrounds/spr_stars02.png" id="3_wg7h4"]
+[ext_resource type="Texture2D" uid="uid://bww3g8g6wr1nw" path="res://assets/backgrounds/spr_stars01.png" id="1_jcv8w"]
+[ext_resource type="Script" path="res://scenes/level_bg/level_bg.gd" id="1_wui7a"]
+[ext_resource type="Texture2D" uid="uid://dylvax2sl5qao" path="res://assets/backgrounds/spr_stars02.png" id="2_cu88l"]
 
 [node name="LevelBg" type="ParallaxBackground"]
-script = ExtResource("1_wossw")
+script = ExtResource("1_wui7a")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -13,14 +13,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0142752, 0.0142752, 0.0142752, 1)
+color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.2, 0.2)
 motion_mirroring = Vector2(0, 2560)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-texture = ExtResource("2_rrfus")
+texture = ExtResource("1_jcv8w")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.4, 0.4)
@@ -28,7 +28,7 @@ motion_mirroring = Vector2(0, 2560)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("3_wg7h4")
+texture = ExtResource("2_cu88l")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.6, 0.6)
@@ -36,5 +36,5 @@ motion_mirroring = Vector2(0, 2560)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("3_wg7h4")
+texture = ExtResource("2_cu88l")
 offset = Vector2(50, 100)

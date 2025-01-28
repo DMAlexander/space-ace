@@ -26,6 +26,7 @@ var _speed: float = 50
 var _player_ref: Player
 var _dead: bool = false
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_player_ref = get_tree().get_first_node_in_group(GameManager.GROUP_PLAYER)
@@ -42,7 +43,7 @@ func _process(delta: float) -> void:
 	if progress_ratio > 0.99:
 		queue_free()
 		
-		
+
 func start_shoot_timer() -> void:
 	SpaceUtils.set_and_start_timer(
 		laser_timer,
@@ -53,12 +54,12 @@ func start_shoot_timer() -> void:
 
 func setup(speed: float) -> void:
 	_speed = speed
-	
-	
+
+
 func update_bullet_direction() -> void:
 	if aims_at_player == false:
 		return
-		
+	
 	if is_instance_valid(_player_ref) == false:
 		return
 		
@@ -69,40 +70,37 @@ func update_bullet_direction() -> void:
 func shoot() -> void:
 	if shoots_at_player == false:
 		return
-	update_bullet_direction()
+	update_bullet_direction() 
 	SignalManager.on_create_bullet.emit(
-		global_position,
+		global_position, 
 		bullet_direction,
-		bullet_speed,
+		bullet_speed, 
 		bullet_type
-	)	
+	)
 	SoundManager.play_laser_random(sound)
 	start_shoot_timer()
-	
-	
+
+
 func make_booms() -> void:
 	for b in booms.get_children():
 		SignalManager.on_create_explosion.emit(
-			b.global_position,
+			b.global_position, 
 			Explosion.ExplosionType.BOOM
 		)
-		
+
 func create_power_up() -> void:
 	if randf() < power_up_chance:
 		SignalManager.on_create_powerup_random.emit(global_position)
-		
-		
+
+
 func die() -> void:
 	if _dead == true:
 		return
 	_dead = true
-	create_power_up()
+	create_power_up() 
 	make_booms()
 	ScoreManager.increment_score(kill_me_score)
 	queue_free()
-		
-		
-		
 
 
 func _on_laser_timer_timeout() -> void:

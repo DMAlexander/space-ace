@@ -1,26 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://dk8omhxwio0on"]
+[gd_scene load_steps=6 format=3 uid="uid://bi1hb1wqfgo43"]
 
-[ext_resource type="Script" path="res://scenes/power_up/power_up.gd" id="1_xykdi"]
-[ext_resource type="Texture2D" uid="uid://scod8if5u52i" path="res://assets/misc/shield_gold.png" id="2_42eq6"]
-[ext_resource type="PackedScene" uid="uid://bxvhinyrc2kqk" path="res://scenes/out_of_time/out_of_time.tscn" id="2_qtwkp"]
+[ext_resource type="PackedScene" uid="uid://l5amewkweun" path="res://scenes/hit_box/hit_box.tscn" id="1_flevs"]
+[ext_resource type="Texture2D" uid="uid://c0tw3wsanqg1d" path="res://assets/misc/shield_gold.png" id="2_h5jby"]
+[ext_resource type="Script" path="res://scenes/power_up/power_up.gd" id="2_onsx0"]
+[ext_resource type="PackedScene" uid="uid://be8edt75x0p0i" path="res://scenes/out_of_time/out_of_time.tscn" id="3_popj4"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xv3p5"]
-radius = 9.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_0blp3"]
+radius = 7.0
 
-[node name="PowerUp" type="Area2D"]
+[node name="PowerUp" groups=["Moveables"] instance=ExtResource("1_flevs")]
 collision_layer = 64
-script = ExtResource("1_xykdi")
+collision_mask = 1
+script = ExtResource("2_onsx0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_0blp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_42eq6")
+texture = ExtResource("2_h5jby")
 
-[node name="OutOfTime" parent="." instance=ExtResource("2_qtwkp")]
+[node name="OutOfTime" parent="." index="2" instance=ExtResource("3_popj4")]
 life_s = 8.0
 
-[node name="Sound" type="AudioStreamPlayer2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_xv3p5")
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[node name="Sound" type="AudioStreamPlayer2D" parent="." index="3"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://gmpwkc4m2g5y"]
 
-[ext_resource type="PackedScene" uid="uid://bv6jjh2m8itn7" path="res://scenes/hit_box/hit_box.tscn" id="1_t8enm"]
+[ext_resource type="PackedScene" uid="uid://l5amewkweun" path="res://scenes/hit_box/hit_box.tscn" id="1_t8enm"]
 [ext_resource type="Texture2D" uid="uid://b67yiydg8y5d7" path="res://assets/lasers/spaceMissiles_040.png" id="2_7rfbd"]
-[ext_resource type="Script" path="res://scenes/homing_missle/homing_missile.gd" id="2_8mkix"]
+[ext_resource type="Script" path="res://scenes/homing_missile/homing_missile.gd" id="2_8mkix"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8rawe"]
 radius = 5.0

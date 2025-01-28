@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpmsjy244fy1w"]
+[gd_scene load_steps=2 format=3 uid="uid://2855l2srlu1l"]
 
-[ext_resource type="Script" path="res://scenes/shake_cam/shake_cam.gd" id="1_0qec4"]
+[ext_resource type="Script" path="res://scenes/shake_cam/shake_cam.gd" id="1_7qotv"]
 
 [node name="ShakeCam" type="Camera2D"]
-script = ExtResource("1_0qec4")
+anchor_mode = 0
+script = ExtResource("1_7qotv")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

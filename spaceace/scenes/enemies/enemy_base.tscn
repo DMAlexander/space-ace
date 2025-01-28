@@ -1,20 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4aa5oqh4s51u"]
+[gd_scene load_steps=5 format=3 uid="uid://b1dsfqcs883ff"]
 
-[ext_resource type="Script" path="res://scenes/enemies/enemy_base.gd" id="1_7kpg8"]
-[ext_resource type="PackedScene" uid="uid://bxvhinyrc2kqk" path="res://scenes/out_of_time/out_of_time.tscn" id="2_n0ufq"]
-[ext_resource type="PackedScene" uid="uid://bv6jjh2m8itn7" path="res://scenes/hit_box/hit_box.tscn" id="3_iq1cv"]
-[ext_resource type="PackedScene" uid="uid://di2dosybxngl0" path="res://scenes/health_bar/health_bar.tscn" id="4_c1o73"]
+[ext_resource type="Script" path="res://scenes/enemies/enemy_base.gd" id="1_bydqf"]
+[ext_resource type="PackedScene" uid="uid://be8edt75x0p0i" path="res://scenes/out_of_time/out_of_time.tscn" id="1_lus64"]
+[ext_resource type="PackedScene" uid="uid://l5amewkweun" path="res://scenes/hit_box/hit_box.tscn" id="2_y64ya"]
+[ext_resource type="PackedScene" uid="uid://b0mrfubjxjs0o" path="res://scenes/health_bar/health_bar.tscn" id="4_fc6ej"]
 
 [node name="EnemyBase" type="PathFollow2D" groups=["Moveables"]]
-script = ExtResource("1_7kpg8")
-shoots_at_player = true
-bullet_type = 1
+rotates = false
+script = ExtResource("1_bydqf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+flip_v = true
 
-[node name="OutOfTime" parent="." instance=ExtResource("2_n0ufq")]
+[node name="OutOfTime" parent="." instance=ExtResource("1_lus64")]
 
-[node name="HitBox" parent="." instance=ExtResource("3_iq1cv")]
+[node name="HitBox" parent="." instance=ExtResource("2_y64ya")]
 collision_layer = 2
 collision_mask = 4
 
@@ -23,9 +23,9 @@ one_shot = true
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 
-[node name="HealthBar" parent="." instance=ExtResource("4_c1o73")]
+[node name="HealthBar" parent="." instance=ExtResource("4_fc6ej")]
 
-[node name="Booms" type="Area2D" parent="."]
+[node name="Booms" type="Node2D" parent="."]
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]

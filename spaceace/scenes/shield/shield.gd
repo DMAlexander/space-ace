@@ -8,10 +8,9 @@ class_name Shield
 
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
-@onready var sound: AudioStreamPlayer2D = $Sound
 @onready var timer: Timer = $Timer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
+@onready var sound: AudioStreamPlayer2D = $Sound
 
 
 var _health: int = start_health

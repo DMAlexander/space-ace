@@ -1,13 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://cktqvja82cr55"]
+[gd_scene load_steps=9 format=3 uid="uid://cd0bbk1xt703l"]
 
-[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_pqhhm"]
-[ext_resource type="Texture2D" uid="uid://dbjjyf46yn6l1" path="res://assets/backgrounds/GalaxyUno.png" id="2_508j7"]
-[ext_resource type="PackedScene" uid="uid://dxfhyiupcsh2i" path="res://scenes/sun/sun.tscn" id="2_hr3e3"]
-[ext_resource type="Texture2D" uid="uid://c76i8waewf17e" path="res://assets/backgrounds/spr_stars01.png" id="3_04hd5"]
-[ext_resource type="Texture2D" uid="uid://br3kg6o247jbd" path="res://assets/backgrounds/spr_stars02.png" id="4_w7yhj"]
-[ext_resource type="LabelSettings" uid="uid://cb2u5o7m8jgyn" path="res://assets/LG_Title.tres" id="5_3nh4b"]
-[ext_resource type="PackedScene" uid="uid://oxv843wa4d7e" path="res://scenes/ui_button/ui_button.tscn" id="6_enu14"]
-[ext_resource type="AudioStream" uid="uid://cq7bp18ifqvfo" path="res://assets/sounds/loops/TitleScreen.mp3" id="8_yj4eo"]
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_g5b8i"]
+[ext_resource type="Texture2D" uid="uid://du0n362ffk5je" path="res://assets/backgrounds/GalaxyUno.png" id="1_nnoo3"]
+[ext_resource type="Texture2D" uid="uid://bww3g8g6wr1nw" path="res://assets/backgrounds/spr_stars01.png" id="2_66350"]
+[ext_resource type="Texture2D" uid="uid://dylvax2sl5qao" path="res://assets/backgrounds/spr_stars02.png" id="3_22orb"]
+[ext_resource type="LabelSettings" uid="uid://cb2u5o7m8jgyn" path="res://assets/LG_Title.tres" id="4_daeih"]
+[ext_resource type="PackedScene" uid="uid://bg8q47atma1eu" path="res://scenes/ui_button/ui_button.tscn" id="5_gi04w"]
+[ext_resource type="PackedScene" uid="uid://dpc2ntu22bjes" path="res://scenes/sun/sun.tscn" id="5_oyldj"]
+[ext_resource type="AudioStream" uid="uid://ou8w73ty7g61" path="res://assets/sounds/loops/TitleScreen.mp3" id="8_um2ym"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -16,28 +16,44 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_pqhhm")
+script = ExtResource("1_g5b8i")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -560.0
+offset_bottom = 560.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_508j7")
+texture = ExtResource("1_nnoo3")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("3_04hd5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -1040.0
+offset_right = 960.0
+offset_bottom = 1040.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_66350")
 
 [node name="TextureRect3" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("4_w7yhj")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -1040.0
+offset_right = 960.0
+offset_bottom = 1040.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_22orb")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -54,7 +70,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 text = "SPACE ACE
 (ish)"
-label_settings = ExtResource("5_3nh4b")
+label_settings = ExtResource("4_daeih")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -64,19 +80,22 @@ size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/separation = 12
 
-[node name="PlayButton" parent="MarginContainer/VBoxContainer" instance=ExtResource("6_enu14")]
+[node name="PlayButton" parent="MarginContainer/VBoxContainer" instance=ExtResource("5_gi04w")]
 layout_mode = 2
 text = "Play"
 
-[node name="ExitButton" parent="MarginContainer/VBoxContainer" instance=ExtResource("6_enu14")]
+[node name="ExitButton" parent="MarginContainer/VBoxContainer" instance=ExtResource("5_gi04w")]
 layout_mode = 2
 text = "Exit"
 
-[node name="Sun" parent="." instance=ExtResource("2_hr3e3")]
-position = Vector2(60, 60)
+[node name="Sun" parent="." instance=ExtResource("5_oyldj")]
+position = Vector2(57, 57)
+scale = Vector2(0.35, 0.35)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_yj4eo")
+stream = ExtResource("8_um2ym")
+volume_db = -8.0
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

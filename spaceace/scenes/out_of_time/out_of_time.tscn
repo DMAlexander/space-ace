@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxvhinyrc2kqk"]
+[gd_scene load_steps=2 format=3 uid="uid://be8edt75x0p0i"]
 
-[ext_resource type="Script" path="res://scenes/out_of_time/out_of_time.gd" id="1_gmafs"]
+[ext_resource type="Script" path="res://scenes/out_of_time/out_of_time.gd" id="1_cquyp"]
 
 [node name="OutOfTime" type="Node"]
-script = ExtResource("1_gmafs")
+script = ExtResource("1_cquyp")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

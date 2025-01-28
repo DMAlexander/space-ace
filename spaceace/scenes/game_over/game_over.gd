@@ -21,7 +21,8 @@ func _process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("shoot") == true:
 		GameManager.load_main_scene()
-
+	
+	
 
 func on_player_died() -> void:
 	set_process(true)

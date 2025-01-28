@@ -1,16 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://oxv843wa4d7e"]
+[gd_scene load_steps=6 format=3 uid="uid://bg8q47atma1eu"]
 
-[ext_resource type="Script" path="res://scenes/ui_button/ui_button.gd" id="1_3tgfb"]
-[ext_resource type="Texture2D" uid="uid://bj8fkoosyqvut" path="res://assets/ui/blue_button00.png" id="1_actlf"]
-[ext_resource type="Texture2D" uid="uid://3ana4ishd1da" path="res://assets/ui/green_button00.png" id="2_2rhlp"]
-[ext_resource type="Texture2D" uid="uid://cmaw0r1yrwqus" path="res://assets/ui/yellow_button00.png" id="3_cgnov"]
-[ext_resource type="LabelSettings" uid="uid://bslymv1e3rjua" path="res://assets/GN_32_white.tres" id="4_w0pq0"]
+[ext_resource type="Texture2D" uid="uid://blx8k4av62ykw" path="res://assets/ui/blue_button00.png" id="1_p5mv7"]
+[ext_resource type="Texture2D" uid="uid://j6rkkidlfybg" path="res://assets/ui/green_button00.png" id="2_j44ga"]
+[ext_resource type="LabelSettings" uid="uid://bslymv1e3rjua" path="res://assets/GN_32_white.tres" id="3_ru4fo"]
+[ext_resource type="Script" path="res://scenes/ui_button/ui_button.gd" id="3_u2svn"]
+[ext_resource type="Texture2D" uid="uid://d2bg8dbcja3g7" path="res://assets/ui/yellow_button00.png" id="3_xu0go"]
 
 [node name="UiButton" type="TextureButton"]
-texture_normal = ExtResource("1_actlf")
-texture_pressed = ExtResource("2_2rhlp")
-texture_hover = ExtResource("3_cgnov")
-script = ExtResource("1_3tgfb")
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_p5mv7")
+texture_pressed = ExtResource("2_j44ga")
+texture_hover = ExtResource("3_xu0go")
+script = ExtResource("3_u2svn")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -26,6 +28,6 @@ offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Set Me"
-label_settings = ExtResource("4_w0pq0")
+label_settings = ExtResource("3_ru4fo")
 horizontal_alignment = 1
 vertical_alignment = 1

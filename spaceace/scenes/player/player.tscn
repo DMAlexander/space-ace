@@ -1,13 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkam8pio4ig2i"]
+[gd_scene load_steps=9 format=3 uid="uid://vvy5d0f4ss0n"]
 
-[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ckg8v"]
-[ext_resource type="Texture2D" uid="uid://brjdeeo1yo3ce" path="res://assets/ships/ships_human_1.png" id="2_nyc5a"]
-[ext_resource type="PackedScene" uid="uid://bd4vhxu3lj7cv" path="res://scenes/shield/shield.tscn" id="3_nhjwf"]
+[ext_resource type="Texture2D" uid="uid://dpbyrwitcgsk2" path="res://assets/ships/ships_human_1.png" id="1_1yyw7"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_kksdf"]
+[ext_resource type="PackedScene" uid="uid://dch78bgpours7" path="res://scenes/shield/shield.tscn" id="3_3n5fu"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_r5s8f"]
-radius = 13.3417
+[sub_resource type="CircleShape2D" id="CircleShape2D_1njnk"]
+radius = 13.0
 
-[sub_resource type="Animation" id="Animation_0jp5v"]
+[sub_resource type="Animation" id="Animation_330uo"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "values": [1]
 }
 
-[sub_resource type="Animation" id="Animation_f3mhq"]
+[sub_resource type="Animation" id="Animation_arqwg"]
 resource_name = "fly"
 length = 0.2
 loop_mode = 1
@@ -40,7 +40,7 @@ tracks/0/keys = {
 "values": [0, 1]
 }
 
-[sub_resource type="Animation" id="Animation_5cem5"]
+[sub_resource type="Animation" id="Animation_fmdwl"]
 resource_name = "turn"
 length = 0.2
 loop_mode = 1
@@ -58,33 +58,33 @@ tracks/0/keys = {
 "values": [2, 3]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2dfaq"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eys5o"]
 _data = {
-"RESET": SubResource("Animation_0jp5v"),
-"fly": SubResource("Animation_f3mhq"),
-"turn": SubResource("Animation_5cem5")
+"RESET": SubResource("Animation_330uo"),
+"fly": SubResource("Animation_arqwg"),
+"turn": SubResource("Animation_fmdwl")
 }
 
-[node name="Player" type="Area2D" groups=["Moveables", "Player"]]
+[node name="Player" type="Area2D" groups=["Player"]]
 collision_mask = 90
-script = ExtResource("1_ckg8v")
+script = ExtResource("1_kksdf")
 speed = 200.0
 bullet_speed = 280.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_nyc5a")
+texture = ExtResource("1_1yyw7")
 hframes = 4
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_r5s8f")
+shape = SubResource("CircleShape2D_1njnk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_2dfaq")
+"": SubResource("AnimationLibrary_eys5o")
 }
 autoplay = "fly"
 
-[node name="Shield" parent="." instance=ExtResource("3_nhjwf")]
+[node name="Shield" parent="." instance=ExtResource("3_3n5fu")]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

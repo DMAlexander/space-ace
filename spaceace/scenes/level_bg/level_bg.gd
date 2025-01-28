@@ -3,6 +3,7 @@ extends ParallaxBackground
 
 const SPEED: float = 50.0
 
+
 @onready var parallax_layer: ParallaxLayer = $ParallaxLayer
 @onready var parallax_layer_2: ParallaxLayer = $ParallaxLayer2
 @onready var parallax_layer_3: ParallaxLayer = $ParallaxLayer3

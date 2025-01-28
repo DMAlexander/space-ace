@@ -1,19 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1rlxigkrbkos"]
+[gd_scene load_steps=4 format=3 uid="uid://o5ichvgcbfln"]
 
-[ext_resource type="PackedScene" uid="uid://ce2wxnf7bupxr" path="res://scenes/bullets/base_bullet.tscn" id="1_fupmr"]
-[ext_resource type="Texture2D" uid="uid://cw78cw3opyi65" path="res://assets/lasers/laserRed03.png" id="2_8ydh7"]
+[ext_resource type="PackedScene" uid="uid://dvhvjx0jsw3b6" path="res://scenes/bullets/base_bullet.tscn" id="1_widgj"]
+[ext_resource type="Texture2D" uid="uid://cxx3jfmc5yysc" path="res://assets/lasers/laserRed03.png" id="2_kc4ps"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4pu52"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q4x4i"]
 radius = 2.0
 height = 16.0
 
-[node name="EnemyBullet" instance=ExtResource("1_fupmr")]
+[node name="EnemyBullet" instance=ExtResource("1_widgj")]
 collision_layer = 8
 collision_mask = 33
 
 [node name="CollisionShape2D" parent="." index="0"]
-shape = SubResource("CapsuleShape2D_4pu52")
+shape = SubResource("CapsuleShape2D_q4x4i")
 
 [node name="Sprite2D" parent="." index="2"]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_8ydh7")
+texture = ExtResource("2_kc4ps")

@@ -6,6 +6,7 @@ class_name HealthBar
 
 signal died
 
+
 const COLOR_DANGER: Color = Color("#cc0000")
 const COLOR_MIDDLE: Color = Color("#ff9900")
 const COLOR_GOOD: Color = Color("#33cc33")
@@ -34,18 +35,17 @@ func set_color() -> void:
 		tint_progress = COLOR_MIDDLE
 	else:
 		tint_progress = COLOR_GOOD
-		
-		
+
+
 func incr_value(v: int) -> void:
-	if _dead == true:
+	if _dead == true: 
 		return
 	value += v
 	if value <= 0:
 		_dead = true
 		died.emit()
 	set_color()
-	
-	
+
+
 func take_damage(v: int) -> void:
 	incr_value(-v)
-	

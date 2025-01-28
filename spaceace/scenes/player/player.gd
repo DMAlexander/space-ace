@@ -14,7 +14,7 @@ class_name Player
 @onready var shield: Shield = $Shield
 
 
-const MARGIN: float = 32.0
+const MARGIN: float = 16.0
 
 
 var _upper_left: Vector2
@@ -24,8 +24,6 @@ var _lower_right: Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_limits()
-	print(_upper_left)
-	print(_lower_right)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

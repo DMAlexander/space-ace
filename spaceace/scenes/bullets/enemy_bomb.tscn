@@ -1,12 +1,12 @@
 [gd_scene load_steps=7 format=3 uid="uid://gpdrkhi6welc"]
 
-[ext_resource type="PackedScene" uid="uid://ce2wxnf7bupxr" path="res://scenes/bullets/base_bullet.tscn" id="1_r51ud"]
-[ext_resource type="Texture2D" uid="uid://bvtu7s0d1pdjx" path="res://assets/lasers/circle_bomb_red-Sheet.png" id="2_4k7r0"]
+[ext_resource type="PackedScene" uid="uid://ce2wxnf7bupxr" path="res://scenes/bullets/base_bullet.tscn" id="1_mfrjg"]
+[ext_resource type="Texture2D" uid="uid://blb2nno86c2q5" path="res://assets/lasers/circle_bomb_red-Sheet.png" id="2_rri4a"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jrqnw"]
-radius = 12.0416
+[sub_resource type="CircleShape2D" id="CircleShape2D_vjcnh"]
+radius = 12.0
 
-[sub_resource type="Animation" id="Animation_uve74"]
+[sub_resource type="Animation" id="Animation_sq5mg"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -21,7 +21,7 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_anwd5"]
+[sub_resource type="Animation" id="Animation_7bgbx"]
 resource_name = "flash"
 length = 0.8
 loop_mode = 1
@@ -39,26 +39,27 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_j8xur"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qswgv"]
 _data = {
-"RESET": SubResource("Animation_uve74"),
-"flash": SubResource("Animation_anwd5")
+"RESET": SubResource("Animation_sq5mg"),
+"flash": SubResource("Animation_7bgbx")
 }
 
-[node name="EnemyBomb" instance=ExtResource("1_r51ud")]
+[node name="EnemyBomb" instance=ExtResource("1_mfrjg")]
 collision_layer = 8
 collision_mask = 33
+damage = 30
 
 [node name="CollisionShape2D" parent="." index="0"]
-shape = SubResource("CircleShape2D_jrqnw")
+shape = SubResource("CircleShape2D_vjcnh")
 
 [node name="Sprite2D" parent="." index="2"]
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_4k7r0")
+texture = ExtResource("2_rri4a")
 hframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 libraries = {
-"": SubResource("AnimationLibrary_j8xur")
+"": SubResource("AnimationLibrary_qswgv")
 }
 autoplay = "flash"

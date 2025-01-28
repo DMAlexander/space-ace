@@ -6,7 +6,7 @@ const ENEMY_BULLET = preload("res://scenes/bullets/enemy_bullet.tscn")
 const PLAYER_BULLET = preload("res://scenes/bullets/player_bullet.tscn")
 const POWER_UP = preload("res://scenes/power_up/power_up.tscn")
 const EXPLOSION = preload("res://scenes/explosion/explosion.tscn")
-const HOMING_MISSILE = preload("res://scenes/homing_missle/homing_missile.tscn")
+const HOMING_MISSILE = preload("res://scenes/homing_missile/homing_missile.tscn")
 
 const ADD_OBJECT: String = "add_object"
 

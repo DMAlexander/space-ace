@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cll7tl56r3nuw"]
+[gd_scene load_steps=4 format=3 uid="uid://c7ms3sthtwlba"]
 
-[ext_resource type="Script" path="res://scenes/game_over/game_over.gd" id="1_wl6kf"]
-[ext_resource type="LabelSettings" uid="uid://cb2u5o7m8jgyn" path="res://assets/LG_Title.tres" id="2_r0rv0"]
-[ext_resource type="LabelSettings" uid="uid://bslymv1e3rjua" path="res://assets/GN_32_white.tres" id="3_l1qu3"]
+[ext_resource type="Script" path="res://scenes/game_over/game_over.gd" id="1_6d43n"]
+[ext_resource type="LabelSettings" uid="uid://cb2u5o7m8jgyn" path="res://assets/LG_Title.tres" id="1_fki2e"]
+[ext_resource type="LabelSettings" uid="uid://bslymv1e3rjua" path="res://assets/GN_32_white.tres" id="2_8c2nr"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -11,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wl6kf")
+script = ExtResource("1_6d43n")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.328787, 0.0657657, 0.180049, 1)
+color = Color(0.252795, 0.057929, 0.50683, 0.694118)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -29,10 +29,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -181.0
-offset_top = -50.0
-offset_right = 181.0
-offset_bottom = 50.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 24
@@ -40,17 +40,19 @@ theme_override_constants/separation = 24
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "GAME OVER"
-label_settings = ExtResource("2_r0rv0")
+label_settings = ExtResource("1_fki2e")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScoreLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "asasdasd"
-label_settings = ExtResource("3_l1qu3")
+text = "adsfadsasdasdasdads"
+label_settings = ExtResource("2_8c2nr")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

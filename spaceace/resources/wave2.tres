@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnemyWave" load_steps=3 format=3 uid="uid://buah0rygysomi"]
 
 [ext_resource type="Script" path="res://resources/enemy_wave.gd" id="1_b8rjk"]
-[ext_resource type="PackedScene" uid="uid://lu0jo8ik0086" path="res://scenes/enemies/enemy_bio.tscn" id="1_tqh3e"]
+[ext_resource type="PackedScene" uid="uid://35hd7vh0nheh" path="res://scenes/enemies/enemy_bio.tscn" id="1_tqh3e"]
 
 [resource]
 script = ExtResource("1_b8rjk")
