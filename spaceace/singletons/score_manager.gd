@@ -17,7 +17,7 @@ func increment_score(v: int) -> void:
 	_score += v
 	if _high_score < _score:
 		_high_score = _score
-	SignalManager.on_score_update.emit(_score)
+	SignalManager.on_score_updated.emit(_score)
 	print(_score)
 	
 	

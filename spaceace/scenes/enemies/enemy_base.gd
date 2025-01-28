@@ -98,7 +98,7 @@ func die() -> void:
 	_dead = true
 	create_power_up()
 	make_booms()
-#	ScoreManager.increment_score(kill_me_score)
+	ScoreManager.increment_score(kill_me_score)
 	queue_free()
 		
 		
