@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dhusjd5bm6soi"]
+[gd_scene load_steps=12 format=3 uid="uid://dhusjd5bm6soi"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_og60i"]
 [ext_resource type="PackedScene" uid="uid://cn1vt41iffic5" path="res://scenes/level_bg/level_bg.tscn" id="2_o5ae7"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b2owp5xtee7qf" path="res://scenes/enemies/enemy_zipper.tscn" id="5_6hpju"]
 [ext_resource type="PackedScene" uid="uid://35hd7vh0nheh" path="res://scenes/enemies/enemy_bio.tscn" id="6_mk84d"]
 [ext_resource type="PackedScene" uid="uid://deufmy0xq5xbf" path="res://scenes/enemies/enemy_bomber.tscn" id="7_0a8gi"]
+[ext_resource type="PackedScene" uid="uid://ca4yjjdoax4w0" path="res://scenes/game_ui/game_ui.tscn" id="8_wxfrt"]
 
 [sub_resource type="Curve2D" id="Curve2D_jwvpp"]
 _data = {
@@ -62,3 +63,7 @@ rotation = 0.0210053
 
 [node name="EnemyBomber" parent="." instance=ExtResource("7_0a8gi")]
 position = Vector2(291, 101)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameUi" parent="CanvasLayer" instance=ExtResource("8_wxfrt")]
